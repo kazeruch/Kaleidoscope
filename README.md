@@ -14,3 +14,12 @@ $ sudo apt-get install llvm-16
 $ llvm-config-16 --version
 16.0.6
 ```
+
+## トラブルシューティング
+参考: https://github.com/llvm/llvm-project/issues/53950
+### -- Could NOT find FFI (missing: HAVE_FFI_CALL)
+```bash
+sudo apt-get update
+sudo apt-get install libffi-dev
+```
+### 

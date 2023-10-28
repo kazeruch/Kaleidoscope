@@ -16,7 +16,10 @@ endif()
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-project(my-cpp-project CXX)
+# enables C for error:
+# CMake Error at /usr/local/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake:51 (message):
+#   check_source_compiles: C: needs to be enabled before use.
+project(my-cpp-project CXX C)
 
 add_subdirectory(test)
 add_subdirectory(src)
