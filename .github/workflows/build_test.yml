@@ -39,6 +39,15 @@ jobs:
 
       - name: Additional Dependencies
         run: sudo apt-get install -y autoconf-archive
+      
+      - name: Install LLVM 16
+        run: |
+          wget https://apt.llvm.org/llvm.sh
+          chmod +x llvm.sh
+          sudo ./llvm.sh 16
+          apt list | grep llvm-16
+          sudo apt-get install llvm-16
+          llvm-config-16 --version
 
       - name: Tools version
         run: |
@@ -46,6 +55,7 @@ jobs:
           ninja --version
           g++ --version
           vcpkg --version
+          llvm-config-16 --version
 
       - name: Configure CMake
         # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
