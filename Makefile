@@ -8,7 +8,7 @@ CMAKE_ARGS+=-DCMAKE_TOOLCHAIN_FILE=$(VCPKG_ROOT)/scripts/buildsystems/vcpkg.cmak
 -DLLVM_DIR=$(LLVM_CMAKE_DIR)
 
 configure: FORCE
-	cmake -GNinja -S . -B build $(CMAKE_ARGS)
+	cmake -GNinja -S . -B build $(CMAKE_ARGS) $(CMAKE_EXTRA_ARGS)
 
 build:
 	ninja -C build
