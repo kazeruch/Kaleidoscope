@@ -14,3 +14,14 @@ $ sudo apt-get install llvm-16
 $ llvm-config-16 --version
 16.0.6
 ```
+
+## 出力したIRを使う
+```bash
+$ ./build/src/a.out 2> tmp.ir
+$ llc-16 tmp.ir
+$ ls
+tmp.ir.s
+$ cat tmp.ir.s
+$ clang tmp.ir.s
+$ ./a.out
+```
